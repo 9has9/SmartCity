@@ -20,7 +20,7 @@ public class Main extends Application {
         LoginPageController loginPageController = new LoginPageController();
 
         primaryStage.setScene(new Scene(loginPageController.getLoginPage()));
-        primaryStage.setWidth(400);
+        primaryStage.setWidth(700);
         primaryStage.setHeight(365);
 
         primaryStage.show();
