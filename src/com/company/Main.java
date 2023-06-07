@@ -21,7 +21,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(loginPageController.getLoginPage()));
         primaryStage.setWidth(400);
-        primaryStage.setHeight(200);
+        primaryStage.setHeight(1000);
 
         primaryStage.show();
     }
