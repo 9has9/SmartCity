@@ -1,28 +1,12 @@
 package com.company.model;
 
-public class Admin {
-
-    private String userName;
-    private String password;
+public class Admin extends Loginers{
 
     public Admin() {
-        this.setUserName("hsh");
-        this.setPassword("123");
+        super("hsh", "123");
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public Admin(String userName, String password) {
+        super(userName, password);
     }
 }
