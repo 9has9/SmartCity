@@ -2,8 +2,6 @@ package com.company.controller;
 
 
 import com.company.Main;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import com.company.view.LoginPage;

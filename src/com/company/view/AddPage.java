@@ -15,6 +15,10 @@ public class AddPage extends VBox {
     private DatePicker dateOfEmploymentDPR;
     private TextField incomeTXF;
     private ChoiceBox districtCHB;
+    private TextField mayorUserNameTXF;
+    private PasswordField mayorPasswordPSF;
+    private Label mayorUserNameLBL;
+    private Label mayorPasswordLBL;
     private Button applyBTN;
     private Button cancelBTN;
     private Button okBTN;
@@ -42,7 +46,13 @@ public class AddPage extends VBox {
         setIncomeTXF(new TextField());
         VBox vBox1_3 = new VBox(incomeLBL, getIncomeTXF());
 
-        VBox vBox1 = new VBox(vBox1_1, vBox1_2, vBox1_3);
+        setMayorUserNameLBL(new Label("User Name"));
+        setMayorUserNameTXF(new TextField());
+        VBox vBox1_4 = new VBox(getMayorUserNameLBL(), getMayorUserNameTXF());
+        getMayorUserNameLBL().setVisible(false);
+        getMayorUserNameTXF().setVisible(false);
+
+        VBox vBox1 = new VBox(vBox1_1, vBox1_2, vBox1_3, vBox1_4);
         vBox1.setPrefWidth(428);
         vBox1.setPadding(new Insets(10, 30, 20, 30));
         vBox1.setSpacing(10);
@@ -56,6 +66,12 @@ public class AddPage extends VBox {
         getDateOfEmploymentDPR().setPrefWidth(428);
         VBox vBox2_2 = new VBox(dateOfEmploymentLBL, getDateOfEmploymentDPR());
 
+        setMayorPasswordLBL(new Label("Password"));
+        setMayorPasswordPSF(new PasswordField());
+        VBox vBox2_4 = new VBox(mayorPasswordLBL, getMayorPasswordPSF());
+        getMayorPasswordLBL().setVisible(false);
+        getMayorPasswordPSF().setVisible(false);
+
         setDistrictCHB(new ChoiceBox<>());
         getDistrictCHB().getItems().add("Select an option");
         getDistrictCHB().setValue("Select an option");
@@ -65,7 +81,7 @@ public class AddPage extends VBox {
         VBox vBox2_3 = new VBox(vBox2_2, getDistrictCHB());
         vBox2_3.setSpacing(27);
 
-        VBox vBox2 = new VBox(vBox2_1, vBox2_3);
+        VBox vBox2 = new VBox(vBox2_1, vBox2_3, vBox2_4);
         vBox2.setPrefWidth(428);
         vBox2.setPadding(new Insets(10, 30, 20, 30));
         vBox2.setSpacing(10);
@@ -80,6 +96,8 @@ public class AddPage extends VBox {
         getOkBTN().setPrefWidth(70);
         getCancelBTN().setPrefWidth(70);
         getApplyBTN().setPrefWidth(70);
+
+        //getApplyBTN().setDisable(true);
 
         HBox hBox3 = new HBox(getOkBTN(), getCancelBTN(), getApplyBTN());
         hBox3.setSpacing(8);
@@ -146,6 +164,38 @@ public class AddPage extends VBox {
         this.districtCHB = districtCHB;
     }
 
+    public TextField getMayorUserNameTXF() {
+        return mayorUserNameTXF;
+    }
+
+    public void setMayorUserNameTXF(TextField mayorUserNameTXF) {
+        this.mayorUserNameTXF = mayorUserNameTXF;
+    }
+
+    public TextField getMayorPasswordPSF() {
+        return mayorPasswordPSF;
+    }
+
+    public void setMayorPasswordPSF(PasswordField mayorPasswordPSF) {
+        this.mayorPasswordPSF = mayorPasswordPSF;
+    }
+
+    public Label getMayorUserNameLBL() {
+        return mayorUserNameLBL;
+    }
+
+    public void setMayorUserNameLBL(Label mayorUserNameLBL) {
+        this.mayorUserNameLBL = mayorUserNameLBL;
+    }
+
+    public Label getMayorPasswordLBL() {
+        return mayorPasswordLBL;
+    }
+
+    public void setMayorPasswordLBL(Label mayorPasswordLBL) {
+        this.mayorPasswordLBL = mayorPasswordLBL;
+    }
+
     public Button getApplyBTN() {
         return applyBTN;
     }
@@ -169,4 +219,5 @@ public class AddPage extends VBox {
     public void setOkBTN(Button okBTN) {
         this.okBTN = okBTN;
     }
+
 }
