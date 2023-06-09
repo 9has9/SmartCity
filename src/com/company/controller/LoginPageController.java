@@ -25,6 +25,7 @@ public class LoginPageController {
 
                     Stage mainPageStage = new Stage();
                     mainPageStage.setScene(new Scene(mainPageController.getMainPage()));
+                    mainPageStage.setTitle("Smart City");
                     mainPageStage.setWidth(856);
                     mainPageStage.setHeight(500);
                     mainPageStage.setResizable(false);

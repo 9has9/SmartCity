@@ -20,6 +20,7 @@ public class Main extends Application {
         LoginPageController loginPageController = new LoginPageController();
 
         primaryStage.setScene(new Scene(loginPageController.getLoginPage()));
+        primaryStage.setTitle("Smart City");
         primaryStage.setWidth(400);
         primaryStage.setHeight(230);
 
