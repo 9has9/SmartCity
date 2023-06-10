@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -45,25 +46,16 @@ public class LoginPageController {
                     && getLoginPage().getPasswordField().getText().equals(Main.userMayor.getPassword()) ) {
 
                 getLoginPage().getScene().getWindow().hide();
-
                 Stage mayorPageStage = new Stage();
-
-                /*loader.setLocation(getClass().getResource("view/MayorPage.fxml"));
-
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/company/view/MayorPage.fxml"));
                 try {
                     loader.load();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
-                }*/
-
-                VBox vBox = null;
-                try {
-                    vBox = FXMLLoader.load(Paths.get("/Users/shakiba/IdeaProjects/SmartCity/src/com/company/view/MayorPage.fxml").toUri().toURL());
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
-
-                mayorPageStage.setScene(new Scene(vBox));
+                mayorPageStage.setScene(new Scene(loader.getRoot()));
+                mayorPageStage.setTitle("Library Page");
+                mayorPageStage.setResizable(false);
                 mayorPageStage.show();
 
             }else {

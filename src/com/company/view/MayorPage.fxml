@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.MayorPageController">
+   <center>
+      <TableView prefHeight="500.0" prefWidth="856.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="libraryNameTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Library Name" />
+          <TableColumn fx:id="districtTBLC" prefWidth="140.0" resizable="false" sortable="false" text="District" />
+            <TableColumn fx:id="establishedYearTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Established Year" />
+            <TableColumn fx:id="ownerFullNameTBLC" prefWidth="249.0" resizable="false" sortable="false" text="Owner Full Name">
+               <columns>
+                  <TableColumn fx:id="firstNameTBLC" prefWidth="148.0" resizable="false" sortable="false" text="First Name" />
+                  <TableColumn fx:id="lastNameTBLC" prefWidth="148.0" resizable="false" sortable="false" text="Last Name" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="ownerNumberTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Owner Number" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button fx:id="backBTN" mnemonicParsing="false" onAction="#pressBackBTN" text="Back" />
+          <Button fx:id="removeBTN" mnemonicParsing="false" onAction="#pressRemoveBTN" text="Remove" />
+            <Button fx:id="addBTN" mnemonicParsing="false" onAction="#pressAddBTN" text="Add" />
+            <Button fx:id="openBTN" mnemonicParsing="false" onAction="#pressOpenBTN" text="Open" />
+        </buttons>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+</BorderPane>

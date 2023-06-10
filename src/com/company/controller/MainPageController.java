@@ -4,8 +4,11 @@ import com.company.model.*;
 import com.company.view.MainPage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainPageController {
 
