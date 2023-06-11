@@ -1,11 +1,14 @@
 package com.company.controller;
 
+import com.company.model.Library;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+
+import java.sql.SQLException;
 
 public class AddMayorPageController {
 
@@ -48,7 +51,11 @@ public class AddMayorPageController {
             addLBL.setTextFill(Color.RED);
             addLBL.setText("Complete all the parts!!");
         }else {
+            Library library = new Library(libraryNameTXF.getText(), districtTXF.getText(), ownerFirstNameTXF.getText()
+                    , ownerLastNameTXF.getText(), establishedYearTXF.getText(), ownerNumberTXF.getText());
 
+            DataBase db = new DataBase();
+            int id = db.insertLibrary(library);
 
         }
     }
