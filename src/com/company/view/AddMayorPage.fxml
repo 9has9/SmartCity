@@ -43,15 +43,20 @@
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="addBTN" layoutX="471.0" layoutY="330.0" onAction="#pressAddBTN" text="Add" AnchorPane.rightAnchor="53.0">
+      <JFXButton fx:id="addBTN" layoutX="493.0" layoutY="330.0" onAction="#pressAddBTN" text="Add" AnchorPane.rightAnchor="31.0">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </JFXButton>
-      <Label fx:id="addLBL" layoutX="70.0" layoutY="338.0" prefHeight="35.0" prefWidth="253.0" text="Click add when you are done">
+      <Label fx:id="addLBL" layoutX="70.0" layoutY="338.0" prefHeight="35.0" prefWidth="300.0" text="Click add when you are done">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+      <JFXButton fx:id="cancelBTN" layoutX="379.0" layoutY="330.0" onAction="#pressCancelBTN" text="Cancel">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

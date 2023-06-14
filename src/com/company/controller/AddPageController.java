@@ -5,7 +5,11 @@ import com.company.view.AddPage;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.Initializable;
 import javafx.scene.input.KeyEvent;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class AddPageController {
 
@@ -262,7 +266,7 @@ public class AddPageController {
 
     }
 
-    /*public boolean isEmpty() {
+    public boolean checkAllfields() {
 
         if (getAddPage().getPersonalCHB().getValue().equals("Select a personal")
                 || getAddPage().getFirstNameTXF().getText().equals("")
@@ -276,11 +280,13 @@ public class AddPageController {
                 || getAddPage().getDistrictCHB().getValue().equals("Select the number of missions")
                 || getAddPage().getDistrictCHB().getValue().equals("Select the working hours")
                 || getAddPage().getDistrictCHB().getValue().equals("Select the number of shifts")) {
-                    return true;
-        }else {
+            getAddPage().getApplyBTN().setDisable(true);
             return false;
+        }else {
+            getAddPage().getApplyBTN().setDisable(false);
+            return true;
         }
-    }*/
+    }
 
     public AddPage getAddPage() {
         return addPage;
@@ -297,4 +303,13 @@ public class AddPageController {
     public void setMainPageController(MainPageController mainPageController) {
         this.mainPageController = mainPageController;
     }
+
+    /*@Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if (checkAllfields() == true) {
+            System.out.println("All fields are por");
+        }else {
+            System.out.println("All fields are khali");
+        }
+    }*/
 }

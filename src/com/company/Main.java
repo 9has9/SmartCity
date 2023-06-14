@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import com.company.model.Admin;
 
+import java.util.ArrayList;
+
 public class Main extends Application {
 
     public static Admin admin = new Admin();

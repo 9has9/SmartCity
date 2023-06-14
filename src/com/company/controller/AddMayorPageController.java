@@ -7,8 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class AddMayorPageController {
 
@@ -40,7 +41,30 @@ public class AddMayorPageController {
     private Label addLBL;
 
     @FXML
+    private JFXButton cancelBTN;
+
+    @FXML
     void pressAddBTN(ActionEvent event) {
+        createLibrary();
+    }
+
+    @FXML
+    void pressCancelBTN(ActionEvent event) {
+
+    }
+
+    private void createLibrary() {
+
+        if (checkAllFields() == true && checkLibraryName() == true) {
+            Library library = new Library(libraryNameTXF.getText(), districtTXF.getText(), ownerFirstNameTXF.getText()
+                    , ownerLastNameTXF.getText(), establishedYearTXF.getText(), ownerNumberTXF.getText());
+
+            library.save();
+        }
+    }
+
+    private boolean checkAllFields() {
+
         if (libraryNameTXF.getText().compareTo("") == 0
                 || districtTXF.getText().compareTo("") == 0
                 || ownerFirstNameTXF.getText().compareTo("") == 0
@@ -50,14 +74,26 @@ public class AddMayorPageController {
 
             addLBL.setTextFill(Color.RED);
             addLBL.setText("Complete all the parts!!");
-        }else {
-            Library library = new Library(libraryNameTXF.getText(), districtTXF.getText(), ownerFirstNameTXF.getText()
-                    , ownerLastNameTXF.getText(), establishedYearTXF.getText(), ownerNumberTXF.getText());
-
-            DataBase db = new DataBase();
-            int id = db.insertLibrary(library);
-
+            return false;
         }
+        return true;
     }
 
+    private boolean checkLibraryName() {
+        ArrayList<Library> libraries = Library.getAllLibraries();
+
+        for (int i = 0; i < libraries.size(); i++) {
+            if (libraries.get(i).getName().equals(libraryNameTXF.getText())) {
+                addLBL.setTextFill(Color.RED);
+                addLBL.setText("This name has already been used!!");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void closeStage() {
+        ((Stage)cancelBTN.getScene().getWindow()).hide();
+        
+    }
 }
