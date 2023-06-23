@@ -42,6 +42,22 @@ public class Library {
         this.setOwnerNumber(ownerNumber);
     }
 
+    public static void createTableForLibraries() {
+        try {
+            DataBase.createTableForLibraries();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void deleteTableOfLibraries() {
+        try {
+            DataBase.deleteTableOfLibraries();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static ArrayList<Library> getAllLibraries() {
         try {
             return DataBase.getAllLibraries();

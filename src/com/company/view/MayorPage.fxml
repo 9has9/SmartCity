@@ -7,28 +7,30 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.MayorPageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.MayorPageController">
    <center>
-      <TableView prefHeight="500.0" prefWidth="856.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="libraryTBLV" prefHeight="500.0" prefWidth="856.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn fx:id="libraryNameTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Library Name" />
-          <TableColumn fx:id="districtTBLC" prefWidth="140.0" resizable="false" sortable="false" text="District" />
-            <TableColumn fx:id="establishedYearTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Established Year" />
-            <TableColumn fx:id="ownerFullNameTBLC" prefWidth="249.0" resizable="false" sortable="false" text="Owner Full Name">
+            <TableColumn fx:id="idTBLC" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="libraryNameTBLC" prefWidth="130.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Library Name" />
+          <TableColumn fx:id="districtTBLC" prefWidth="130.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="District" />
+            <TableColumn fx:id="ownerFullNameTBLC" prefWidth="249.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Owner Full Name">
                <columns>
-                  <TableColumn fx:id="firstNameTBLC" prefWidth="148.0" resizable="false" sortable="false" text="First Name" />
-                  <TableColumn fx:id="lastNameTBLC" prefWidth="148.0" resizable="false" sortable="false" text="Last Name" />
+                  <TableColumn fx:id="firstNameTBLC" prefWidth="148.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="First Name" />
+                  <TableColumn fx:id="lastNameTBLC" prefWidth="148.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Last Name" />
                </columns>
             </TableColumn>
-            <TableColumn fx:id="ownerNumberTBLC" prefWidth="140.0" resizable="false" sortable="false" text="Owner Number" />
+            <TableColumn fx:id="establishedYearTBLC" prefWidth="130.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Established Year" />
+            <TableColumn fx:id="ownerNumberTBLC" prefWidth="130.0" resizable="false" sortable="false" style="-fx-alignment: center;" text="Owner Number" />
         </columns>
       </TableView>
    </center>
    <bottom>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
-            <Button fx:id="backBTN" mnemonicParsing="false" onAction="#pressBackBTN" text="Back" />
+            <Button fx:id="exitBTN" mnemonicParsing="false" onAction="#pressExitBTN" text="Exit" />
           <Button fx:id="removeBTN" mnemonicParsing="false" onAction="#pressRemoveBTN" text="Remove" />
+            <Button fx:id="editBTN" mnemonicParsing="false" onAction="#pressEditBTN" text="Edit" />
             <Button fx:id="addBTN" mnemonicParsing="false" onAction="#pressAddBTN" text="Add" />
             <Button fx:id="openBTN" mnemonicParsing="false" onAction="#pressOpenBTN" text="Open" />
         </buttons>

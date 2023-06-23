@@ -33,17 +33,24 @@ public class DataBase {
         }
     }
 
-    public static void creatTableForLibraries() {
+    public static void createTableForLibraries() throws SQLException {
 
         makeConnection();
 
-        String tableSQL = "CREATE TABLE IF NOT EXISTS Libraries (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,Name TEXT,District TEXT , OwnerFirstName TEXT, OwnerLastName TEXT,EstablishedYear TEXT,OwnerNumber TEXT );";
+        String creatTableSQL = "CREATE TABLE IF NOT EXISTS Libraries (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,Name TEXT,District TEXT , OwnerFirstName TEXT, OwnerLastName TEXT,EstablishedYear TEXT,OwnerNumber TEXT );";
 
-        try {
-            statement.executeUpdate(tableSQL);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        statement.executeUpdate(creatTableSQL);
+
+        closeConnection();
+    }
+
+    public static void deleteTableOfLibraries() throws SQLException {
+
+        makeConnection();
+
+        String deleteTableSQL = "DROP TABLE Libraries";
+
+        statement.execute(deleteTableSQL);
 
         closeConnection();
     }
@@ -123,5 +130,6 @@ public class DataBase {
 
         closeConnection();
     }
+
 
 }

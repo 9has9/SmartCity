@@ -20,6 +20,8 @@ import java.nio.file.Paths;
 public class LoginPageController {
 
     private LoginPage loginPage;
+    private FXMLLoader loader;
+    private Stage LoginPageStage;
 
     public LoginPageController() {
         setLoginPage(new LoginPage());
@@ -46,13 +48,18 @@ public class LoginPageController {
                     && getLoginPage().getPasswordField().getText().equals(Main.userMayor.getPassword()) ) {
 
                 getLoginPage().getScene().getWindow().hide();
-                Stage mayorPageStage = new Stage();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/company/view/MayorPage.fxml"));
+                setLoader(new FXMLLoader(getClass().getResource("/com/company/view/MayorPage.fxml")));
                 try {
                     loader.load();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+
+                MayorPageController controller = loader.getController();
+                controller.setLoginPageStage(getLoginPageStage());
+                controller.setLoginPageController(this);
+
+                Stage mayorPageStage = new Stage();
                 mayorPageStage.setScene(new Scene(loader.getRoot()));
                 mayorPageStage.setTitle("Library Page");
                 mayorPageStage.setResizable(false);
@@ -73,5 +80,21 @@ public class LoginPageController {
 
     public void setLoginPage(LoginPage loginPage) {
         this.loginPage = loginPage;
+    }
+
+    public FXMLLoader getLoader() {
+        return loader;
+    }
+
+    public void setLoader(FXMLLoader loader) {
+        this.loader = loader;
+    }
+
+    public Stage getLoginPageStage() {
+        return LoginPageStage;
+    }
+
+    public void setLoginPageStage(Stage loginPageStage) {
+        LoginPageStage = loginPageStage;
     }
 }

@@ -1,15 +1,11 @@
 package com.company;
 
-import com.company.controller.DataBase;
 import com.company.controller.LoginPageController;
-import com.company.model.Library;
 import com.company.model.UserMayor;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import com.company.model.Admin;
-
-import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -24,6 +20,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         LoginPageController loginPageController = new LoginPageController();
+
+        loginPageController.setLoginPageStage(primaryStage);
 
         primaryStage.setScene(new Scene(loginPageController.getLoginPage()));
         primaryStage.setTitle("Smart City");

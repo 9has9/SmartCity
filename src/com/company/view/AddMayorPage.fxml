@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="406.0" prefWidth="602.0" style="-fx-background-color: #E0DCE2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.AddMayorPageController">
    <children>
-      <Label fx:id="addlibraryLBL" layoutX="216.0" layoutY="24.0" text="Add Library" AnchorPane.bottomAnchor="343.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="215.0">
+      <Label fx:id="headLineLBL" layoutX="216.0" layoutY="24.0" text="Add Library" AnchorPane.bottomAnchor="343.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="215.0">
          <font>
             <Font name="Bauhaus 93" size="34.0" />
          </font>
@@ -48,7 +48,7 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </JFXButton>
-      <Label fx:id="addLBL" layoutX="70.0" layoutY="338.0" prefHeight="35.0" prefWidth="300.0" text="Click add when you are done">
+      <Label fx:id="errorLBL" layoutX="70.0" layoutY="338.0" prefHeight="35.0" prefWidth="300.0" text="Click add when you are done">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
