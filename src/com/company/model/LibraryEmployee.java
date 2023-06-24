@@ -5,28 +5,27 @@ import com.company.controller.DataBase;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class LibraryManager extends User{
+public class LibraryEmployee extends User{
     private int id;
     private String userName;
     private String password;
 
-    public LibraryManager() {
+    public LibraryEmployee() {
         this(-1, "", "");
     }
-
-    public LibraryManager(String userName, String password) {
+    public LibraryEmployee(String userName, String password) {
         super();
         this.setId(-1);
         this.setUserName(userName);
         this.setPassword(password);
     }
-    public LibraryManager(int id, String userName, String password) {
+    public LibraryEmployee(int id, String userName, String password) {
         super();
         this.setId(id);
         this.setUserName(userName);
         this.setPassword(password);
     }
-    public LibraryManager(String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber
+    public LibraryEmployee(String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber
             , String address, String userName, String password) {
 
         super(firstName, lastName, nationalCode, age, gender, phoneNumber, address);
@@ -34,7 +33,7 @@ public class LibraryManager extends User{
         this.setUserName(userName);
         this.setPassword(password);
     }
-    public LibraryManager(int id, String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber
+    public LibraryEmployee(int id, String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber
             , String address, String userName, String password) {
 
         super(firstName, lastName, nationalCode, age, gender, phoneNumber, address);
@@ -43,25 +42,25 @@ public class LibraryManager extends User{
         this.setPassword(password);
     }
 
-    public static void createTableForLibraryManagers() {
+    public static void createTableForLibraryEmployees() {
         try {
-            DataBase.createTableForLibraryManagers();
+            DataBase.createTableForLibraryEmployees();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void deleteTableOfLibraryManagers() {
+    public static void deleteTableOfLibraryEmployees() {
         try {
-            DataBase.deleteTableOfLibraryManagers();
+            DataBase.deleteTableOfLibraryEmployees();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static ArrayList<LibraryManager> getAllLibraryManagers() {
+    public static ArrayList<LibraryEmployee> getAllLibraryEmployees() {
         try {
-            return DataBase.getAllLibraryManagers();
+            return DataBase.getAllLibraryEmployees();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -71,13 +70,13 @@ public class LibraryManager extends User{
     public void save() {
         if (this.id == -1) {
             try {
-                this.id = DataBase.insertLibraryManager(this);
+                this.id = DataBase.insertLibraryEmployee(this);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         }else {
             try {
-                DataBase.updateLibraryManager(this);
+                DataBase.updateLibraryEmployee(this);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
@@ -87,7 +86,7 @@ public class LibraryManager extends User{
     @Override
     public void delete() {
         try {
-            DataBase.deleteLibraryManager(this);
+            DataBase.deleteLibraryEmployee(this);
             this.id = -1;
         } catch (SQLException e) {
             throw new RuntimeException(e);

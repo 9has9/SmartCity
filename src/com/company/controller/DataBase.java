@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.model.Library;
+import com.company.model.LibraryEmployee;
 import com.company.model.LibraryManager;
 
 import java.sql.*;
@@ -141,7 +142,7 @@ public class DataBase {
 
         makeConnection();
 
-        String deleteTableSQL = "DROP TABLE LibraryManagers";
+        String deleteTableSQL = "DROP TABLE Library Managers";
 
         statement.execute(deleteTableSQL);
 
@@ -208,6 +209,97 @@ public class DataBase {
                 , libraryManager.getFirstName(), libraryManager.getLastName(), libraryManager.getNationalCode(), libraryManager.getAge()
                 , libraryManager.getGender(), libraryManager.getPhoneNumber(), libraryManager.getAddress(), libraryManager.getUserName()
                 , libraryManager.getPassword());
+
+        statement.execute(updateSQL);
+
+        closeConnection();
+    }
+
+
+    //Library Employee
+
+    public static void createTableForLibraryEmployees() throws SQLException {
+
+        makeConnection();
+
+        String creatTableSQL = "CREATE TABLE IF NOT EXISTS Library Employees (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, FirstName TEXT, LastName TEXT, NationalCode INTEGER, Age INTEGER, Gender TEXT, PhoneNumber INTEGER, Address TEXT, UserName TXT, Password TXT);";
+
+        statement.executeUpdate(creatTableSQL);
+
+        closeConnection();
+    }
+
+    public static void deleteTableOfLibraryEmployees() throws SQLException {
+
+        makeConnection();
+
+        String deleteTableSQL = "DROP TABLE Library Employees";
+
+        statement.execute(deleteTableSQL);
+
+        closeConnection();
+    }
+
+    public static int insertLibraryEmployee(LibraryEmployee libraryEmployee) throws SQLException {
+
+        makeConnection();
+
+        String insertSQL = String.format("insert into Library Employees (FirstName, LastName, NationalCode, Age, Gender, PhoneNumber, Address, UserName, Password) values" +
+                "('%s', '%s', %d, %d, '%s', %d, '%s, '%s', '%s')",libraryEmployee.getFirstName(), libraryEmployee.getLastName(), libraryEmployee.getNationalCode(), libraryEmployee.getAge(), libraryEmployee.getGender(), libraryEmployee.getPhoneNumber(), libraryEmployee.getUserName(), libraryEmployee.getPassword());
+
+        statement.execute(insertSQL, Statement.RETURN_GENERATED_KEYS);
+
+        ResultSet re = statement.getGeneratedKeys();
+        re.next();
+        int id = re.getInt(1);
+
+        closeConnection();
+
+        return id;
+    }
+
+    public static void deleteLibraryEmployee(LibraryEmployee libraryEmployee) throws SQLException {
+
+        makeConnection();
+
+        String deleteSQL = String.format("delete from Library Employees where id = %d", libraryEmployee.getId());
+
+        statement.execute(deleteSQL);
+
+        closeConnection();
+    }
+
+    public static ArrayList<LibraryEmployee> getAllLibraryEmployees() throws SQLException {
+
+        makeConnection();
+
+        String selectSQL = "select * from Library Employees";
+
+        ResultSet re = statement.executeQuery(selectSQL);
+
+        ArrayList<LibraryEmployee> libraryEmployees = new ArrayList<>();
+
+        while (re.next()) {
+            libraryEmployees.add(new LibraryEmployee(re.getInt(1), re.getString(2)
+                    , re.getString(3), re.getInt(4), re.getInt(5)
+                    , re.getString(6), re.getInt(7), re.getString(8)
+                    , re.getString(9), re.getString(10)));
+        }
+
+        closeConnection();
+
+        return libraryEmployees;
+    }
+
+    public static void updateLibraryEmployee(LibraryEmployee libraryEmployee) throws SQLException {
+
+        makeConnection();
+
+        String updateSQL = String.format("update Library Employees set FirstName = '%s', LastName = '%s', NationalCode = %d" +
+                        ", Age = %d, Gender = '%s', PhoneNumber = %d, Address = '%s', UserName = '%s', Password = '%s' where id = %d"
+                , libraryEmployee.getFirstName(), libraryEmployee.getLastName(), libraryEmployee.getNationalCode(), libraryEmployee.getAge()
+                , libraryEmployee.getGender(), libraryEmployee.getPhoneNumber(), libraryEmployee.getAddress(), libraryEmployee.getUserName()
+                , libraryEmployee.getPassword());
 
         statement.execute(updateSQL);
 
