@@ -10,5 +10,7 @@
     <orderEntry type="library" name="jfoenix-8.0.10" level="application" />
     <orderEntry type="library" name="javafx-swt" level="application" />
     <orderEntry type="library" name="sqlite-jdbc-3.42.0.0" level="application" />
+    <orderEntry type="library" name="fontawesomefx-8.9" level="application" />
+    <orderEntry type="library" name="fontawesomefx-glyphsbrowser-all-1.0" level="application" />
   </component>
 </module>

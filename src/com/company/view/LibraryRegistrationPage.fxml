@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="559.0" prefWidth="387.0" style="-fx-background-color: #E0DCE2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.controller.LibraryRegistrationPageController">
    <children>
-      <Label alignment="CENTER" layoutX="108.0" layoutY="27.0" text="Registration" textAlignment="CENTER" textFill="#515a5a" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="30.0">
+      <Label fx:id="headLineLBL" alignment="CENTER" layoutX="108.0" layoutY="27.0" text="Registration" textAlignment="CENTER" textFill="#515a5a" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="30.0">
          <font>
             <Font name="Bauhaus 93" size="33.0" />
          </font>
@@ -21,54 +20,54 @@
          <children>
             <Group layoutX="162.0">
                <children>
-                  <JFXTextField layoutY="17.0" />
-                  <Label text="Last Name" />
+                  <JFXTextField fx:id="lastNameTXF" layoutY="17.0" />
+                  <Label fx:id="lastNameLBL" text="Last Name" />
                </children>
             </Group>
             <Group layoutY="72.0">
                <children>
-                  <JFXTextField layoutY="17.0" />
-                  <Label text="National Code" />
+                  <JFXTextField fx:id="nationalCodeTXF" layoutY="17.0" />
+                  <Label fx:id="nationalCodeLBL" text="National Code" />
                </children>
             </Group>
             <Group layoutX="162.0" layoutY="71.0">
                <children>
-                  <JFXTextField layoutY="18.0" />
-                  <Label text="Age" />
+                  <JFXTextField fx:id="ageTXF" layoutY="18.0" />
+                  <Label fx:id="ageLBL" text="Age" />
                </children>
             </Group>
             <Group layoutY="146.0">
                <children>
-                  <JFXComboBox layoutY="17.0" prefHeight="25.0" prefWidth="135.0" />
-                  <Label text="Gender" />
+                  <JFXComboBox fx:id="genderCMB" layoutY="17.0" prefHeight="25.0" prefWidth="135.0" />
+                  <Label fx:id="genderLBL" text="Gender" />
                </children>
             </Group>
             <Group layoutX="162.0" layoutY="146.0">
                <children>
-                  <JFXTextField layoutY="17.0" />
-                  <Label text="Phone Number" />
+                  <JFXTextField fx:id="phoneNumberTXF" layoutY="17.0" />
+                  <Label fx:id="phoneNumberLBL" text="Phone Number" />
                </children>
             </Group>
             <Group>
                <children>
-                  <JFXTextField layoutY="17.0" />
-                  <Label text="First Name" />
+                  <JFXTextField fx:id="firstNameTXF" layoutY="17.0" />
+                  <Label fx:id="firstNameLBL" text="First Name" />
                </children>
             </Group>
             <Group layoutY="205.0">
                <children>
-                  <JFXTextArea layoutY="17.0" prefHeight="107.0" prefWidth="297.0" />
-                  <Label text="Address" />
+                  <JFXTextArea fx:id="addressTXA" layoutY="17.0" prefHeight="107.0" prefWidth="297.0" />
+                  <Label fx:id="addressLBL" text="Address" />
                </children>
             </Group>
          </children>
       </Group>
-      <JFXButton layoutX="85.0" layoutY="503.0" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #515A5A;" text="Cancel" textFill="WHITE" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="215.0">
+      <JFXButton fx:id="cancelBTN" layoutX="85.0" layoutY="503.0" onAction="#pressCancelBTN" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #515A5A;" text="Cancel" textFill="WHITE" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="215.0">
          <font>
             <Font name="Sylfaen" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="205.0" layoutY="503.0" style="-fx-background-color: #515A5A;" text="Create Account" textFill="WHITE">
+      <JFXButton fx:id="createAccountBTN" layoutX="205.0" layoutY="503.0" onAction="#pressCreateAccountBTN" style="-fx-background-color: #515A5A;" text="Create Account" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>

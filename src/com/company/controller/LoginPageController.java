@@ -21,7 +21,7 @@ public class LoginPageController {
 
     private LoginPage loginPage;
     private FXMLLoader loader;
-    private Stage LoginPageStage;
+    private Stage loginPageStage;
 
     public LoginPageController() {
         setLoginPage(new LoginPage());
@@ -91,10 +91,10 @@ public class LoginPageController {
     }
 
     public Stage getLoginPageStage() {
-        return LoginPageStage;
+        return loginPageStage;
     }
 
     public void setLoginPageStage(Stage loginPageStage) {
-        LoginPageStage = loginPageStage;
+        this.loginPageStage = loginPageStage;
     }
 }

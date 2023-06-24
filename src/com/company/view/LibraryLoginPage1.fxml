@@ -16,7 +16,7 @@
    <children>
       <AnchorPane layoutX="114.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #515A5A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="295.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView fx:id="replyBTN" fill="#e0dce2" glyphName="REPLY" layoutX="21.0" layoutY="42.0" onMouseClicked="#pressReplyBTN" size="30" text="" />
+            <FontAwesomeIconView fx:id="backBTN" fill="#e0dce2" glyphName="REPLY" layoutX="21.0" layoutY="42.0" onMouseClicked="#pressReplyBTN" size="30" text="" />
          </children></AnchorPane>
       <Group layoutX="454.0" layoutY="148.0" AnchorPane.leftAnchor="454.0" AnchorPane.topAnchor="148.0">
          <children>
@@ -58,7 +58,7 @@
             <Image url="@images/Library%20Login%20Page.png" />
          </image>
       </ImageView>
-      <Label layoutX="424.0" layoutY="274.0" prefHeight="19.0" prefWidth="202.0" text="User name or password is wrong" visible="false">
+      <Label fx:id="errorLBL" layoutX="450.0" layoutY="275.0" prefHeight="19.0" prefWidth="150.0" text="Complete all the parts!!" visible="false">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>

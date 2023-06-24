@@ -138,6 +138,9 @@ public class MayorPageController implements Initializable {
             throw new RuntimeException(e);
         }
 
+        LibraryLoginPageController controller = loader.getController();
+        controller.setMayorPageStage((Stage) openBTN.getScene().getWindow());
+
         Stage LibraryLoginPageStage = new Stage();
         LibraryLoginPageStage.setScene(new Scene(loader.getRoot()));
         LibraryLoginPageStage.setTitle("Library Login Page");
