@@ -131,7 +131,7 @@ public class MayorPageController implements Initializable {
 
         closeStage();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/company/view/LibraryLoginPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/company/view/LibraryLoginPage1.fxml"));
         try {
             loader.load();
         } catch (IOException e) {
