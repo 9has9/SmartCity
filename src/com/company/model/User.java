@@ -1,7 +1,6 @@
 package com.company.model;
 
-public class User {
-    private int id;
+public abstract class User {
     private String firstName;
     private String lastName;
     private int nationalCode;
@@ -11,14 +10,7 @@ public class User {
     private String address;
 
     public User() {
-        this.setId(-1);
-        this.setFirstName("");
-        this.setLastName("");
-        this.setNationalCode(0);
-        this.setAge(0);
-        this.setGender("");
-        this.setPhoneNumber(0);
-        this.setAddress("");
+        this("", "", 0, 0, "", 0, "");
     }
     public User(String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber, String address) {
         this.setFirstName(firstName);
@@ -29,24 +21,10 @@ public class User {
         this.setPhoneNumber(phoneNumber);
         this.setAddress(address);
     }
-    public User(int id, String firstName, String lastName, int nationalCode, int age, String gender, int phoneNumber, String address) {
-        this.setId(id);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setNationalCode(nationalCode);
-        this.setAge(age);
-        this.setGender(gender);
-        this.setPhoneNumber(phoneNumber);
-        this.setAddress(address);
-    }
 
-    public int getId() {
-        return id;
-    }
+    public abstract void save();
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public abstract void delete();
 
     public String getFirstName() {
         return firstName;
