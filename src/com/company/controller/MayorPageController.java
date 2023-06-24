@@ -93,7 +93,7 @@ public class MayorPageController implements Initializable {
     @FXML
     void pressOpenBTN(ActionEvent event) {
         if (addMayorPageStage == null && getLibraryTBLV().getSelectionModel().getSelectedItem() != null) {
-            Library.deleteTableOfLibraries();
+            openLibraryLoginPageStage();
         }
     }
 
@@ -125,6 +125,24 @@ public class MayorPageController implements Initializable {
             addLibraryToTableView(libraries.get(i));
         }
 
+    }
+
+    private void openLibraryLoginPageStage() {
+
+        closeStage();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/company/view/LibraryLoginPage.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Stage LibraryLoginPageStage = new Stage();
+        LibraryLoginPageStage.setScene(new Scene(loader.getRoot()));
+        LibraryLoginPageStage.setTitle("Library Login Page");
+        LibraryLoginPageStage.setResizable(false);
+        LibraryLoginPageStage.show();
     }
 
     private void openAddMayorPageStage() {
